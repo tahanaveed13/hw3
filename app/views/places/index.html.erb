@@ -1,0 +1,7 @@
+<h1>Places I’ve Been</h1>
+<ul>
+  <% @places.each do |place| %>
+    <li><a href="<%= place_path(place) %>"><%= place.name %></a></li>
+  <% end %>
+</ul>
+<a href="<%= new_place_path %>">New Place</a>

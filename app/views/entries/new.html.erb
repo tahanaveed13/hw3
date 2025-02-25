@@ -1,0 +1,22 @@
+<h1>New Entry for <%= @place.name %></h1>
+
+<%= form_with model: @entry, url: place_entries_path(@place), local: true do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  
+  <p>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :posted_on %>
+    <%= form.date_field :posted_on %>
+  </p>
+
+  <%= form.submit "Create Entry" %>
+<% end %>
+
+<a href="<%= place_path(@place) %>">Back to <%= @place.name %></a>

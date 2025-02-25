@@ -1,0 +1,14 @@
+<h1><%= @place.name %></h1>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <h3><%= entry.title %></h3>
+      <p><%= entry.description %></p>
+      <small><%= entry.posted_on %></small>
+    </li>
+  <% end %>
+</ul>
+
+<a href="<%= new_place_entry_path(@place) %>">New Post</a>
+<a href="<%= places_path %>">Back to Places</a>

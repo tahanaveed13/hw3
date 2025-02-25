@@ -1,0 +1,12 @@
+<h1>Add a New Place</h1>
+
+<%= form_with model: @place, url: places_path, method: :post, local: true do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <%= form.submit "Create Place" %>
+<% end %>
+
+<a href="<%= places_path %>">Back to Places</a>
