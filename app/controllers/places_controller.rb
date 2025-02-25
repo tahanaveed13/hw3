@@ -3,6 +3,11 @@ class PlacesController < ApplicationController
     @places = Place.all
   end
 
+  def show
+    @place = Place.find(params[:id])
+    @entries = @place.entries # Fetch all entries related to this place
+  end
+
   def new
     @place = Place.new
   end
@@ -19,6 +24,6 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name)  # Ensure form sends 'place[name]'
+    params.require(:place).permit(:name) # Ensure form sends 'place[name]'
   end
 end
